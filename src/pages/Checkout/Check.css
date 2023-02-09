@@ -1,0 +1,71 @@
+.mybag-header{
+    margin-top: 105px;
+    margin-bottom: 25px;
+  }
+  .mybag-header .shipping{
+    margin-bottom: -15px;
+  }
+
+  .mybag-header h1 {
+    font-weight: bolder;
+  }
+  .mybag-content .select {
+    width: 100%;
+  }
+  .mybag-content .select-col {
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 5px 1px rgb(218, 218, 218);
+  }
+  .mybag-content .pic-one {
+    width: 100%;
+  }
+  .mybag-content .pic-one-col {
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 5px 1px rgb(218, 218, 218);
+  }
+  .mybag-content .pic-two {
+    width: 100%;
+  }
+  .mybag-content .pic-two-col {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 5px 1px rgb(218, 218, 218);
+    border-radius: 10px;
+  }
+
+
+ 
+ .mybag-content .summary {
+  width: 100%;
+ }
+ .mybag-content .summary-col {
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 10px 1px rgb(218, 218, 218);
+}
+.mybag-content .summary .sum h5 {
+  padding: 20px 20px 20px 20px;
+  font-weight: 700;
+}
+.mybag-content .summary .sum .btn-buy {
+  padding: 10px 0 20px ;
+}
+.mybag-content .summary .sum .btn-buy button {
+  border-radius: 50px;
+}
+.mybag-content .summary .price{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px 10px 20px;
+  color: gray;
+}
+.mybag-content .summary .price .money{
+  font-weight: bolder;
+  color: black;
+  font-size: 22px;
+
+}
+
+
+  

@@ -1,0 +1,61 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'MetropolisNF', sans-serif;
+  }
+  
+
+
+
+  /* Bread */
+  .bread {
+    padding-top: 100px;
+  }
+
+
+
+  /* Detail-Product */
+  .detail-product {
+    padding-top: 70px;
+  }
+  .detail-product .adds img {
+    width: 100%;
+  } 
+
+  .detail-product .details h4 {
+    font-size: 30px;
+    font-weight: 500;
+  }
+  .detail-product .details p {
+    color: gray;
+  }
+  .detail-product .details .price {
+    color: gray;
+  }
+  .detail-product .details .money {
+    color: rgb(190, 0, 0);
+    font-weight: bold;
+    font-size: 40px;
+  }
+  .detail-product .rating {
+    display: flex;
+    font-size: 10px;
+  }
+  .detail-product .rating p {
+    margin-top: 2px;
+    padding-left: 10px;
+  }
+  .detail-product .color {
+    padding-top: 30px;
+  }
+
+
+
+  @media only screen and (max-width: 992px) {
+
+    .detail-product .cols-two {
+        margin-left: 0;
+      }
+    
+  }
+
