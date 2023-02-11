@@ -70,7 +70,7 @@ const Category = () => {
         <Carousel responsive={responsive}>
           {category.map((item)=> (
             <>
-                <div>
+              <div>
                 <div className="col-lg-10 col-md-10 col-sm-10 col-11 cat1 mb-4 cat1" style={{backgroundColor : item.backgroundColor}}>
                   <img
                     className="img-fluid"

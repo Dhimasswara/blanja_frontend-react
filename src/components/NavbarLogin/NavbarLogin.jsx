@@ -8,7 +8,8 @@ const NavbarLogin = () => {
     <header>
         <nav className={` ${style.navbar} navbar navbar-expand-lg bg-light fixed-top fixed-sm-bottom`}>
             <div className="navContent container">
-                <a className={`navbar-brand ${style.brand}`} href={"/#"}>
+
+                <a className={`navbar-brand ${style.brand}`} href={"/home"}>
                     <img src={require("../../assets/img/Vector.png")} style={{width: "32px"}} alt=""/>
                     <span> Blanja </span>
                 </a>
@@ -36,7 +37,7 @@ const NavbarLogin = () => {
                                 <img src={require("../../assets/img/profile/profile.png")} alt=""/>
                             </a>
                             <ul className="dropdown-menu">
-                              <li><a className="dropdown-item" href={"/#"}>Profil</a></li>
+                              <li><a className="dropdown-item" href={"/profile"}>Profil</a></li>
                               <Link to='/Login'>
                               <li><a className="dropdown-item" href={"/#"}>Logout</a></li>
                               </Link>

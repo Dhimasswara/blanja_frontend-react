@@ -3,12 +3,13 @@ import { useState , useEffect } from "react";
 import axios from "axios";
 import { FormatRupiah } from "@arismun/format-rupiah";
 import Rating from "../../components/Rating/Rating";
+import { Link } from "react-router-dom";
 
 const ProductPopuler = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
     axios
-    .get('http://localhost:4000/products')
+    .get(`${process.env.REACT_APP_BACKEND}/products`)
     .then(function (response) {
     setProducts(response.data.data);
     })
@@ -27,13 +28,16 @@ const ProductPopuler = () => {
 
       <div class="content-products d-grid">
       <div class="row justify-content-lg-start">
-      {products.map((item)=> (
+      {products.map((item, index)=> (
       
         
           <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-4">
+            <Link to={`/Detail/${item.id_products}`} key={index.toString()} style={{color: "black"}}>
             <div class="card">
               <img
-                src={require("../../assets/img/new product/jacket.png")}
+                class="img-fluid"
+                crossOrigin="Anonymous"
+                src={item.photo}
                 alt=""
               />
               <div class="card-body">
@@ -43,6 +47,7 @@ const ProductPopuler = () => {
                 <Rating/>
               </div>
             </div>
+            </Link>
           </div>
 
       ))}

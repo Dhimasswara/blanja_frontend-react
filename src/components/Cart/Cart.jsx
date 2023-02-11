@@ -49,7 +49,7 @@ const Cart = () => {
                                     <p style={{paddingTop: "15px"}}>2</p>
                                     <button style={{width: "35px", height: "35px", backgroundColor: "antiquewhite" , borderRadius: "100%", border: "none"}}>+</button>
                                 </div>
-                                <div className="col-1 col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-sm-1  ms-auto text-end">
+                                <div className={`col-1 col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-sm-1  ms-auto text-end ${style.cartPrice}`}>
                                     <h5 style={{color: "red" , fontWeight:"700", paddingRight: "10px"}} >$ 20.0</h5>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@ const Cart = () => {
                                     <p style={{paddingTop: "15px"}}>2</p>
                                     <button style={{width:"35px" , height: "35px" , backgroundColor: "antiquewhite" , borderRadius: "100%" , border: "none"}}>+</button>
                                 </div>
-                                <div className="col-1 col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-sm-1  ms-auto text-end">
+                                <div className={`col-1 col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-sm-1  ms-auto text-end  ${style.cartPrice}`}>
                                     <h5 style={{color: "red" , fontWeight: "700" , paddingRight: "10px"}} >$ 20.0</h5>
                                 </div>
                             </div>

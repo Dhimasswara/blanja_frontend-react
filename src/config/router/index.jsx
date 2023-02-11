@@ -7,6 +7,9 @@ import Home from '../../pages/Home'
 import Mybag from '../../pages/Mybag/Mybag'
 import ForgotPassword from '../../pages/Auth/ForgotPassword/ResetPassword'
 import Checkout from '../../pages/Checkout/Checkout'
+import MyOrder from '../../pages/Profile/Seller/MyOrder'
+import Test from '../../pages/Test'
+
 
 const Router = () => {
   return (
@@ -17,9 +20,13 @@ const Router = () => {
                 <Route path="/Login" element={<LoginCust/>}></Route>
                 <Route path="/Register" element={<Register/>}></Route>
                 <Route path="/ForgotPassword" element={<ForgotPassword/>}></Route>
-                <Route path="/Detail" element={<DetailProduct/>}></Route>
+                <Route path="/Detail/:id" element={<DetailProduct/>}></Route>
                 <Route path="/Mybag" element={<Mybag/>}></Route>
                 <Route path="/Checkout" element={<Checkout/>}></Route>
+                <Route path="/Profile/MyOrder" element={<MyOrder/>}></Route>
+                <Route path="/Test" element={<Test/>}></Route>
+
+                {/* <Route path="/Product/:id" element={<Product />} /> */}
             </Routes>
         </BrowserRouter>
     </div>

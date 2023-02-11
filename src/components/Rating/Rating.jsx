@@ -1,9 +1,10 @@
 import React from 'react'
 
+
 const Rating = () => {
   return (
     <>
-    <div class="rating">
+    <div class="rating" style={{marginTop: "-60px"}}>
                             <svg style={{color: "rgb(255, 226, 36)"}} xmlns="http://www.w3.org/2000/svg" width="16"
                                 height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
                                 <path

@@ -29,7 +29,7 @@ const Quantity = () => {
   return (
     <>
       <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
-        <div class="row text-center text-lg-start">
+        <div class="row text-center text-lg-start pe-sm-4 pe-md-0">
           <p>Size</p>
         </div>
         <div class="row">
@@ -45,7 +45,7 @@ const Quantity = () => {
         </div>
       </div>
       <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
-        <div class="row row text-center text-lg-start">
+        <div class="row row text-center text-lg-start ps-sm-0 ps-0">
           <div class="col-12">
             <p>Jumlah</p>
           </div>

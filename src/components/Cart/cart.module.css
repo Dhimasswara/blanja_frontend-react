@@ -76,4 +76,7 @@
     .mybagContent .picOne .picOneCol button {
       width: 20px;
     }
+    .cartPrice h5 {
+      font-size: 17px;
+    }
   }
