@@ -1,29 +1,17 @@
 import React, { Fragment, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import axios from "axios";
-import Swal from "sweetalert";
+import { deleteProducts } from "../../redux/action/productAction";
+import { useDispatch } from "react-redux";
 
 const ModalDelete = ({id, name, children}) => {
-  const navigate = useNavigate()
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const dispatch = useDispatch();
+
   const handleDelete = () => {
-    axios
-      .delete(process.env.REACT_APP_BACKEND + "/products/" + id)
-      .then((res) => {
-        Swal("Deleted!", "Product Delete Success!", "success");
-        navigate("/Profile/MyOrder");
-        console.log(res);
-        setShow(false)
-        })
-      .catch((err) => {
-        Swal("Failed!", "Product Delete Failed!", "error");
-        console.log(err);
-        setShow(false)
-      });
+    dispatch(deleteProducts(id))
   }
   return (
     <Fragment>

@@ -1,13 +1,14 @@
 import React, { Fragment, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import axios from 'axios';
-import Swal from 'sweetalert';
+import { updateProduct } from '../../redux/action/productAction';
+import { useDispatch } from 'react-redux';
 
-const ModalEdit = ({id, name, stock, price, description}) => {
+export const ModalEdit = ({id, name, stock, price, description}) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const dispatch = useDispatch();
 
   const [data, setData] = useState({
     id,
@@ -34,32 +35,7 @@ const ModalEdit = ({id, name, stock, price, description}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const formData = new FormData();
-    formData.append("name", data.name);
-    formData.append("stock", data.stock);
-    formData.append("price", data.price);
-    formData.append("photo", photo);
-    formData.append("description", data.description);
-    formData.append("id_category", "1");
-
-    console.log(id)
-    axios
-      .put(`${process.env.REACT_APP_BACKEND}/products/${id}`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
-      .then((res) => {
-        console.log(res);
-        Swal("Updated!", "Product Update Succes!", "success");
-        setShow(false);
-      })
-      .catch((err) => {
-        console.log(err);
-        Swal("Failed!", "Product Update Failed!", "error");
-        setShow(false);
-      });
+    dispatch(updateProduct(data, photo))
   };
 
 

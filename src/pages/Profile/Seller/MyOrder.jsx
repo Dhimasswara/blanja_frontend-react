@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState , useEffect } from 'react';
-import axios from 'axios';
 import NavbarLogin from '../../../components/NavbarLogin/NavbarLogin';
 import { Table } from 'react-bootstrap';
 import './MyOrder.css'
@@ -8,18 +7,14 @@ import ModalProduct from '../../../components/ModalCreate';
 import ModalEdit from '../../../components/ModalEdit';
 import ModalDelete from '../../../components/ModalDelete';
 import { FormatRupiah } from '@arismun/format-rupiah';
+import { getProduct } from '../../../redux/action/productAction';
+import { useDispatch } from 'react-redux';
 
 const MyOrder = () => {
+    const dispatch = useDispatch();
     const [products, setProducts] = useState([]);
     useEffect(() => {
-      axios
-        .get(`${process.env.REACT_APP_BACKEND}/products`)
-        .then(function (response) {
-          setProducts(response.data.data);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
+      dispatch(getProduct(setProducts))
     }, []);
   
     return (

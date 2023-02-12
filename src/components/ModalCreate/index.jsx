@@ -1,14 +1,15 @@
 import React, { Fragment, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import axios from 'axios';
-import Swal from 'sweetalert';
+import { useDispatch } from 'react-redux';
+import { createProduct } from '../../redux/action/productAction';
+
 
 const ModalProduct = () => {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const dispatch = useDispatch();
 
   const [saveImage, setSaveImage]  = useState(null);
   function handleUpload(e) {
@@ -33,31 +34,7 @@ const ModalProduct = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append("name", data.name);
-    formData.append("stock", data.stock);
-    formData.append("price", data.price);
-    formData.append("photo", saveImage);
-    formData.append("description", data.description);
-    formData.append("id_category", "1");
-    
-    // for (var pair of formData.entries()) {
-    //   console.log(pair[0]+ ', ' + pair[1]); 
-    // }
-    axios
-    .post(process.env.REACT_APP_BACKEND + "/products", formData ,{
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    })
-    .then((res) => {
-        Swal("Created!", "Product Created Success!", "success");
-        setShow(false)
-      })
-      .catch((err) => {
-        Swal("Failed!", "Product Create Failed!", "error");
-        setShow(false)
-      });
+    dispatch(createProduct(data, saveImage));
   };
 
   return (

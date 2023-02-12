@@ -1,23 +1,16 @@
 import React from "react";
 import { useEffect , useState } from "react";
-import axios from "axios";
 import Rating from "../../components/Rating/Rating";
 import { FormatRupiah } from "@arismun/format-rupiah";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { getProduct } from "../../redux/action/productAction";
 
 const NewProduct = () => {
     const [products, setProducts] = useState([]);
-  
-    useEffect(() => {
-    console.log(process.env.REACT_APP_BACKEND)
-    axios
-    .get(`${process.env.REACT_APP_BACKEND}/products/`)
-    .then(function (response) {
-    setProducts(response.data.data);
-    })
-    .catch(function (error) {
-    console.log(error);
-    });
+    const dispatch = useDispatch();
+    useEffect((setProducts) => {
+    dispatch(getProduct(setProducts));
     }, []);
 
   return (
